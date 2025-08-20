@@ -43,29 +43,36 @@ The target vulnerable machine is **DoubleTrouble**, available on VulnHub.
 ---
 
 ## 4️⃣ Networking Setup
+
 To allow your **Kali attacker machine** to talk to the **DoubleTrouble victim machine**:
 1. In UTM, set **both VMs** (Kali + DoubleTrouble) to **Shared Network (NAT)** or **Bridged Mode**.  
    - Shared (NAT) works fine, both machines get IPs in the same range.  
    - Bridged makes them appear on the same LAN as your macOS host.  
 
-2. Boot both VMs.  
-3. From Kali, run:  
-   ```bash
-   ip a
-4.Scan the network to find DoubleTrouble's Ip
-      namps -sn 192.168.1.0/24
+2. Boot both VMs.
+3. From Kali, run:
+    ```bash
+    ip a
+    ```
+   
+4. Scan the network to find DoubleTrouble's IP  
+   nmap -sn 192.168.1.0/24
 
+## 5️⃣ Tools Used
 
-##5️⃣ Tools Used
 Ensure the following tools are installed on Kali:
->>nmap
->>gobuster
->>sqlmap
->>netcat
->>python3
->>gcc (for compiling exploits, if needed)
+- `nmap`
+- `gobuster`
+- `sqlmap`
+- `netcat`
+- `python3`
+- `gcc` (for compiling exploits, if needed)
+
 Install missing ones with:
-sudo apt update && sudo apt install nmap gobuster sqlmap netcat gcc -y
+   ```bash
+
+   sudo apt update && sudo apt install nmap gobuster sqlmap netcat gcc -y
+   ```
 
 ✅ Setup Complete
 At this point:
